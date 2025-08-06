@@ -114,7 +114,7 @@ export function ClientsChapter() {
             transition={{ duration: 0.4 }}
             viewport={{ once: false }}
           >
-            <span className="text-white">TRUSTED BY </span>
+            <span className="text-white block">TRUSTED BY </span>
             <span className="animate-gradient-purple-pink font-bold">
               AMAZING CLIENTS
             </span>

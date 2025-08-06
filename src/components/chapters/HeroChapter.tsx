@@ -24,7 +24,7 @@ export function HeroChapter({ onNavigateToPortfolio }: HeroChapterProps = {}) {
           transition={{ duration: 0.4 }}
           viewport={{ once: false }}
         >
-          <h1 className="mobile-text-3xl s25:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 s25:mb-8 leading-tight short-screen-title">
+          <h1 className="mobile-text-2xl s25:text-3xl md:text-5xl lg:text-6xl font-bold mb-6 s25:mb-8 leading-tight short-screen-title">
             <span className="block text-white uppercase">
               Craft Your Story with Visual Impact
             </span>

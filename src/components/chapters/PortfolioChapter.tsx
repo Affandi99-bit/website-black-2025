@@ -5,12 +5,12 @@ import { X, Play } from "lucide-react";
 
 const portfolioItems = [
   {
-    title: "COMPRO PT MAKMUR BERKAH AMANDA",
+    title: "PT MAKMUR BERKAH AMANDA",
     category: "Video Production | Company Profile",
     videoId: "lnMqEmce-wc",
   },
   {
-    title: "COMPRO ADMEDIKA",
+    title: "ADMEDIKA",
     category: "Video Production | Company Profile",
     videoId: "4yzYw9hmZ9Y",
   },
@@ -20,7 +20,7 @@ const portfolioItems = [
     videoId: "tdFq80-2hrs",
   },
   {
-    title: "Digital Ads Book Cabin Call Center",
+    title: "Book Cabin Call Center",
     category: "Video Production | Digital Ads",
     videoId: "IWDNJrSd0Yo",
   },
@@ -31,17 +31,17 @@ const portfolioItems = [
   },
   {
     title: "PARIVARTANA RASA",
-    category: "Event Documentation | Documentary Film",
+    category: "Event Documentation",
     videoId: "2dRLw5zRaTI",
   },
   {
     title: "BEI Pasar Modal",
-    category: "Motion Graphic | Event Documentation",
+    category: "Motion Graphic | Explainer Videos",
     videoId: "GNYa6ZOE6zk",
   },
   {
     title: "Kemakmuran Semesta",
-    category: "Event Documentation | Documentary Film",
+    category: "Event Documentation",
     videoId: "PnHfKOg3fI0",
   },
 ];
@@ -124,9 +124,9 @@ export function PortfolioChapter() {
                 </div>
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-3">
-                <h3 className="text-white font-bold text-xs md:text-sm mb-1">
+                {/* <h3 className="text-white font-bold text-xs md:text-sm mb-1">
                   {item.title}
-                </h3>
+                </h3> */}
                 <p className="text-gray-300 text-[.50rem] md:text-xs">
                   {item.category}
                 </p>

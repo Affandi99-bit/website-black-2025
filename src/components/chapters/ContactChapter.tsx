@@ -200,7 +200,7 @@ export function ContactChapter() {
         </div>
 
         {/* Footer - Analytics and Copyright */}
-        <div className="absolute bottom-6 left-0 right-0 px-[6%] md:px-[8%]">
+        <div className="absolute bottom-10 left-0 right-0 px-[6%] md:px-[8%]">
           {/* Mobile: 2 Rows Layout, Desktop: Single Row */}
           <div className="md:flex md:items-center md:justify-between space-y-3 md:space-y-0">
             {/* Real-time Analytics */}

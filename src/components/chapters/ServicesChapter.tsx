@@ -57,7 +57,7 @@ export function ServicesChapter() {
       <div className="max-w-7xl mobile-container px-4 s25:px-6 md:px-8 w-full pt-12 s25:pt-16 md:pt-20 short-screen-container short-screen-center">
         <div className="text-center mb-12 short-screen-header">
           <motion.h2
-            className="mobile-text-2xl s25:text-3xl md:text-4xl lg:text-6xl font-bold mb-3 s25:mb-4 md:mb-6 leading-tight px-2 short-screen-title"
+            className="mobile-text-xl s25:text-2xl md:text-4xl lg:text-6xl font-bold mb-3 s25:mb-4 md:mb-6 leading-tight px-2 short-screen-title"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             exit={{ opacity: 0 }}
