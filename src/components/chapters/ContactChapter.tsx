@@ -114,7 +114,6 @@ export function ContactChapter() {
             viewport={{ once: false }}
           >
             <button className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-600 text-white px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 w-64">
-              <Mail className="w-4 h-4 mr-2" />
               blackstudio.id@gmail.com
             </button>
           </motion.div>
