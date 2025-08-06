@@ -15,7 +15,7 @@ const stats = [
   },
   {
     icon: Video,
-    number: 15,
+    number: 25,
     suffix: "+",
     label: "Corporate Films",
     color: "from-purple-500 to-blue-500",
