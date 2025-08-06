@@ -174,7 +174,7 @@ export function ClientsChapter() {
 
         {/* Client Logos Grid */}
         <div className="w-full py-px md:py-3">
-          <img src={group} className="w-full px-2 object-contain" alt="" />
+          <img src={group} className="w-full px-2 pt-5 object-contain" alt="" />
           {/* <div className="grid grid-cols-5 md:grid-cols-10 gap-2 max-w-4xl mx-auto">
             {brand.map((client, index) => (
               <motion.div
