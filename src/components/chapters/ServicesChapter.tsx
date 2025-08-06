@@ -65,7 +65,8 @@ export function ServicesChapter() {
             viewport={{ once: false }}
           >
             <span className="block text-white">
-              OUR CREATIVE ARSENAL IS DIFFERENT
+              OUR CREATIVE ARSENAL
+              <span className="block">IS DIFFERENT</span>
             </span>
             <span className="block animate-gradient-blue-purple font-bold">
               THAN ANYTHING ELSE

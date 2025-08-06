@@ -173,7 +173,7 @@ export function ClientsChapter() {
         </motion.div>
         <img
           src={group}
-          className="w-full px-2 sm:pt-5 lg:pt-0 object-contain"
+          className="w-full md:h-72 px-2 sm:pt-5 lg:pt-0 object-contain"
           alt=""
         />
       </div>

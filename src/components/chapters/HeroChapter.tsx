@@ -26,7 +26,8 @@ export function HeroChapter({ onNavigateToPortfolio }: HeroChapterProps = {}) {
         >
           <h1 className="mobile-text-2xl s25:text-3xl md:text-5xl lg:text-6xl font-bold mb-6 s25:mb-8 leading-tight short-screen-title">
             <span className="block text-white uppercase">
-              Craft Your Story with Visual Impact
+              Craft Your Story
+              <span className="block">with Visual Impact</span>
             </span>
             <span className="block animate-gradient-blue-purple font-bold uppercase">
               BlackStudio.ID
@@ -34,19 +35,16 @@ export function HeroChapter({ onNavigateToPortfolio }: HeroChapterProps = {}) {
           </h1>
 
           <motion.p
-            className="mobile-text-base s25:text-lg text-gray-300 max-w-2xl mx-auto mb-8 s25:mb-12 leading-relaxed font-light short-screen-text short-screen-spacing"
+            className="mobile-text-base text-justify w-2/3 s25:text-lg text-gray-300 max-w-2xl mx-auto mb-8 s25:mb-12 leading-relaxed font-light short-screen-text short-screen-spacing"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
             viewport={{ once: false }}
           >
-            A creative hub based in Batu City, East Java.
-            <br />
-            specializing in video production, motion graphics, photography, and
-            design.
-            <br />
-            We transform imaginative ideas into stunning reality
+            A creative hub based in Batu City, East Java. specializing in video
+            production, motion graphics, photography, and design. We transform
+            imaginative ideas into stunning reality
           </motion.p>
 
           <motion.button

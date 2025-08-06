@@ -31,7 +31,7 @@ const portfolioItems = [
   },
   {
     title: "PARIVARTANA RASA",
-    category: "Event Documentation",
+    category: "Film Documentary",
     videoId: "2dRLw5zRaTI",
   },
   {
@@ -41,7 +41,7 @@ const portfolioItems = [
   },
   {
     title: "Kemakmuran Semesta",
-    category: "Event Documentation",
+    category: "Film Documentary",
     videoId: "PnHfKOg3fI0",
   },
 ];
