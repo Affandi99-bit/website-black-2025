@@ -171,31 +171,11 @@ export function ClientsChapter() {
             </motion.div>
           ))}
         </motion.div>
-
-        {/* Client Logos Grid */}
-        <div className="w-full py-px md:py-3">
-          <img src={group} className="w-full px-2 pt-5 object-contain" alt="" />
-          {/* <div className="grid grid-cols-5 md:grid-cols-10 gap-2 max-w-4xl mx-auto">
-            {brand.map((client, index) => (
-              <motion.div
-                key={index}
-                className="aspect-square bg-white/2 rounded-lg flex items-center justify-center hover:bg-white/15 transition-colors duration-300 cursor-pointer border border-white/5"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.4 }}
-                viewport={{ once: false }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <img
-                  src={client.logo}
-                  alt={client.name}
-                  className="w-20 h-20 object-contain p-1.5"
-                />
-              </motion.div>
-            ))}
-          </div> */}
-        </div>
+        <img
+          src={group}
+          className="w-full px-2 sm:pt-5 lg:pt-0 object-contain"
+          alt=""
+        />
       </div>
     </motion.section>
   );
