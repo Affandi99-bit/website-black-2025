@@ -35,7 +35,7 @@ export function HeroChapter({ onNavigateToPortfolio }: HeroChapterProps = {}) {
           </h1>
 
           <motion.p
-            className="mobile-text-base text-justify w-2/3 s25:text-lg text-gray-300 max-w-2xl mx-auto mb-8 s25:mb-12 leading-relaxed font-light short-screen-text short-screen-spacing"
+            className="mobile-text-base text-center w-2/3 s25:text-lg text-gray-300 max-w-2xl mx-auto mb-8 s25:mb-12 leading-relaxed font-light short-screen-text short-screen-spacing"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             exit={{ opacity: 0 }}
