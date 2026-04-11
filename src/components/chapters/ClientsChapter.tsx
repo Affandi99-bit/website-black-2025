@@ -97,13 +97,12 @@ export function ClientsChapter() {
 
   return (
     <motion.section
-      className="w-screen h-screen flex items-center justify-center relative bg-gradient-to-b from-slate-700 via-purple-900/20 to-slate-700"
-      style={{ aspectRatio: "16/9" }}
+      className="relative flex min-h-[100dvh] w-full items-center justify-center bg-gradient-to-b from-slate-700 via-purple-900/20 to-slate-700 py-10 sm:py-14 md:py-16"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="max-w-7xl mobile-container px-4 s25:px-6 md:px-8 w-full h-full flex flex-col justify-center pt-12 s25:pt-16 md:pt-20 pb-6 s25:pb-8 md:py-16 short-screen-container short-screen-center">
+      <div className="flex w-full max-w-7xl flex-col justify-center px-4 pb-8 s25:px-6 s25:pb-10 md:px-8">
         {/* Header - Area Kuning */}
         <div className="text-center mb-12 md:mb-16 short-screen-header">
           <motion.h2

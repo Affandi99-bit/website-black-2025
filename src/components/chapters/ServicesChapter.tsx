@@ -48,13 +48,12 @@ const services = [
 export function ServicesChapter() {
   return (
     <motion.section
-      className="w-screen h-screen flex items-center justify-center relative bg-gradient-to-b from-slate-800 via-blue-950/30 to-slate-700"
-      style={{ aspectRatio: "16/9" }}
+      className="relative flex min-h-[100dvh] w-full items-center justify-center bg-gradient-to-b from-slate-800 via-blue-950/30 to-slate-700 py-10 sm:py-14 md:py-16"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="max-w-7xl mobile-container px-4 s25:px-6 md:px-8 w-full pt-12 s25:pt-16 md:pt-20 short-screen-container short-screen-center">
+      <div className=" w-full max-w-7xl px-4 s25:px-6 md:px-8">
         <div className="text-center mb-12 short-screen-header">
           <motion.h2
             className="mobile-text-xl s25:text-2xl md:text-4xl lg:text-6xl font-bold mb-3 s25:mb-4 md:mb-6 leading-tight px-2 short-screen-title"

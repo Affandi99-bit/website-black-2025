@@ -1,47 +1,56 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { X, Play } from "lucide-react";
+import { X } from "lucide-react";
+import Card from "../Card";
 
 const portfolioItems = [
   {
     title: "PT MAKMUR BERKAH AMANDA",
     category: "Video Production | Company Profile",
+    desc: "A corporate profile video crafted to strengthen brand credibility and communicate business values through clean visuals, structured storytelling, and a professional tone tailored for stakeholders and clients.",
     videoId: "lnMqEmce-wc",
   },
   {
     title: "ADMEDIKA",
     category: "Video Production | Company Profile",
+    desc: "A modern company profile highlighting healthcare innovation and service excellence, designed to simplify complex offerings into an engaging and trustworthy visual narrative.",
     videoId: "4yzYw9hmZ9Y",
   },
   {
     title: "TUTORIAL QRIS TAP",
     category: "Video Production | Digital Ads",
+    desc: "A fast-paced instructional ad that demonstrates QRIS Tap usage in a simple, intuitive flow—optimized for digital platforms to boost user adoption and understanding instantly.",
     videoId: "tdFq80-2hrs",
   },
   {
     title: "Book Cabin Call Center",
     category: "Video Production | Digital Ads",
+    desc: "A conversion-focused digital ad showcasing call center solutions with clear messaging, dynamic visuals, and a strong call-to-action aimed at business efficiency.",
     videoId: "IWDNJrSd0Yo",
   },
   {
     title: "PT. Garuda Yamato Steel (GYS)",
     category: "Motion Graphic | Company Profile",
+    desc: "A motion graphic-driven company profile transforming industrial processes into visually engaging content, making complex operations accessible and compelling.",
     videoId: "IAG684g8Tv0",
   },
   {
     title: "PARIVARTANA RASA",
     category: "Film Documentary",
+    desc: "A documentary exploring transformation and human experience, captured through cinematic storytelling that emphasizes emotion, authenticity, and cultural depth.",
     videoId: "2dRLw5zRaTI",
   },
   {
     title: "BEI Pasar Modal",
     category: "Motion Graphic | Explainer Videos",
+    desc: "An explainer video breaking down capital market concepts into clear, digestible visuals—designed to educate audiences while maintaining engagement and clarity.",
     videoId: "GNYa6ZOE6zk",
   },
   {
     title: "Kemakmuran Semesta",
     category: "Film Documentary",
+    desc: "A visually rich documentary portraying social and environmental narratives, delivering a meaningful story through strong visuals and immersive pacing.",
     videoId: "PnHfKOg3fI0",
   },
 ];
@@ -52,14 +61,13 @@ export function PortfolioChapter() {
 
   return (
     <motion.section
-      className="w-screen h-screen flex items-center justify-center relative bg-gradient-to-b from-slate-700 via-cyan-950/25 to-slate-700"
-      style={{ aspectRatio: "16/9" }}
+      className="relative flex w-full flex-col items-center justify-center bg-gradient-to-b from-slate-700 via-cyan-950/25 to-slate-700 py-8 sm:py-12 md:py-16"
       data-section="portfolio"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="max-w-7xl mobile-container px-4 s25:px-6 md:px-8 w-full h-full flex flex-col justify-center pt-12 s25:pt-16 md:pt-20 short-screen-container short-screen-center">
+      <div className=" flex min-h-0 w-full max-w-7xl flex-1 flex-col px-4 s25:px-6 md:px-8">
         <div className="text-center mb-6 short-screen-header">
           <motion.h2
             className="mobile-text-3xl s25:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 s25:mb-4 leading-tight short-screen-title"
@@ -85,52 +93,27 @@ export function PortfolioChapter() {
           </motion.p>
         </div>
 
-        {/* Portfolio Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 flex-1 max-h-[450px] short-screen-grid">
-          {portfolioItems.map((item, index) => (
+        <div className="short-screen-grid grid min-h-0 max-h-[min(58dvh,34rem)] flex-1 grid-cols-1 grid-rows-[auto] gap-3 overflow-y-auto overscroll-y-contain pr-0.5 xs:grid-cols-2 md:max-h-none md:grid-cols-3 md:gap-4 md:overflow-visible lg:grid-cols-4">
+          {portfolioItems.map((item) => (
             <motion.div
               key={item.title}
-              className="relative group cursor-pointer overflow-hidden rounded-xl bg-slate-800/30 border border-slate-700/50 hover:border-slate-600 transition-all duration-300"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              className="overflow-hidden rounded-xl border border-slate-700/50 bg-slate-800/30 transition-colors duration-300 hover:border-slate-600"
+              initial={{ opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.4 }}
-              viewport={{ once: false }}
-              whileHover={{ y: -2, scale: 1.01 }}
-              onClick={() => {
-                setSelectedVideo(item.videoId);
-                setSelectedTitle(item.title);
-              }}
+              viewport={{ once: false, margin: "-40px" }}
             >
-              <div
-                className="aspect-video overflow-hidden"
-                style={{ aspectRatio: "16/9" }}
-              >
-                <img
-                  src={`https://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg`}
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
-                {/* Hover Overlay with View Project */}
-                <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="text-center">
-                    <span className="text-white font-semibold text-lg">
-                      View Project
-                    </span>
-                    <Play className="w-12 h-12 text-white mb-2 mx-auto" />
-                  </div>
-                </div>
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 p-3">
-                {/* <h3 className="text-white font-bold text-xs md:text-sm mb-1">
-                  {item.title}
-                </h3> */}
-                <p className="text-gray-300 text-[.50rem] md:text-xs">
-                  {item.category}
-                </p>
-              </div>
+              <Card
+                title={item.title}
+                desc={item.desc}
+                img={`https://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg`}
+                alt={item.title}
+                onClick={() => {
+                  setSelectedVideo(item.videoId);
+                  setSelectedTitle(item.title);
+                }}
+              />
             </motion.div>
           ))}
         </div>

@@ -5,17 +5,16 @@ interface HeroChapterProps {
   onNavigateToPortfolio?: () => void;
 }
 
-export function HeroChapter({ onNavigateToPortfolio }: HeroChapterProps = {}) {
+export function HeroChapter({ onNavigateToPortfolio }: HeroChapterProps) {
   return (
     <motion.section
-      className="w-screen h-screen flex items-center justify-center relative bg-gradient-to-b from-slate-900 via-blue-950/30 to-slate-800"
-      style={{ aspectRatio: "16/9" }}
+      className="relative flex h-screen w-full items-center justify-center bg-gradient-to-b from-slate-900 via-blue-950/30 to-slate-800"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="text-center max-w-4xl mobile-container px-4 s25:px-6 md:px-8 pt-16 s25:pt-20 short-screen-container">
+      <div className="mobile-container max-w-4xl px-4 text-center s25:px-6 md:px-8">
         {/* Hero Text */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -47,24 +46,37 @@ export function HeroChapter({ onNavigateToPortfolio }: HeroChapterProps = {}) {
             imaginative ideas into stunning reality
           </motion.p>
 
-          <motion.button
-            className="bg-gradient-to-r from-orange-500 to-pink-500 text-white px-8 py-3 rounded-full text-sm font-medium hover:from-orange-600 hover:to-pink-600 transition-all duration-300 shadow-lg"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.4 }}
-            viewport={{ once: false }}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            onClick={() => {
-              // Navigate to portfolio section (index 2)
-              if (onNavigateToPortfolio) {
-                onNavigateToPortfolio();
-              }
-            }}
-          >
-            View Portfolio
-          </motion.button>
+          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+            <motion.a
+              className="inline-flex min-h-11 w-full min-w-[10rem] items-center justify-center rounded-full bg-gradient-to-r from-orange-500 to-pink-500 px-8 py-3 text-sm font-medium text-white shadow-lg transition-all duration-300 hover:from-orange-600 hover:to-pink-600 sm:w-auto"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4 }}
+              viewport={{ once: false }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              href="https://wa.me/+628113577793"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Contact us
+            </motion.a>
+            <motion.button
+              type="button"
+              className="inline-flex min-h-11 w-full min-w-[10rem] items-center justify-center rounded-full border border-white/25 bg-white/10 px-8 py-3 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/15 sm:w-auto"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4 }}
+              viewport={{ once: false }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => onNavigateToPortfolio?.()}
+            >
+              View portfolio
+            </motion.button>
+          </div>
         </motion.div>
       </div>
     </motion.section>

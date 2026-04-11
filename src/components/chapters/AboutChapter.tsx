@@ -5,14 +5,13 @@ import { MapPin } from "lucide-react";
 export function AboutChapter() {
   return (
     <motion.section
-      className="w-screen h-screen flex items-center justify-center relative bg-gradient-to-b from-slate-700 via-orange-950/25 to-slate-800"
-      style={{ aspectRatio: "16/9" }}
+      className="relative flex min-h-[100dvh] w-full items-center justify-center bg-gradient-to-b from-slate-700 via-orange-950/25 to-slate-800 py-10 sm:py-14 md:py-16"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="max-w-7xl mobile-container px-4 s25:px-6 md:px-8 w-full h-full flex flex-col justify-center items-center pt-12 s25:pt-16 pb-6 s25:pb-8 md:py-12 short-screen-container short-screen-center">
+      <div className="max-w-7xl px-4 s25:px-6 md:px-8 w-full h-full flex flex-col justify-center items-center pt-12 s25:pt-16 pb-6 s25:pb-8 md:py-12">
         <div className="w-full max-w-4xl flex flex-col items-center">
           {/* Title Area - Centered */}
           <motion.div
@@ -60,7 +59,7 @@ export function AboutChapter() {
                   onClick={() =>
                     window.open(
                       "https://maps.app.goo.gl/EKNTP1cuFMwv6zEV7",
-                      "_blank"
+                      "_blank",
                     )
                   }
                 >

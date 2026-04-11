@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+::-webkit-scrollbar {
+  width: 0;
+}
 :root {
   --background: hsl(0, 0%, 100%);
   --foreground: hsl(20, 14.3%, 4.1%);
@@ -25,7 +27,7 @@
   --destructive-foreground: hsl(60, 9.1%, 97.8%);
   --ring: hsl(20, 14.3%, 4.1%);
   --radius: 0.5rem;
-  
+
   /* BlackStudio Elegant Colors */
   --background-primary: hsl(222.2, 84%, 4.9%);
   --background-secondary: hsl(220, 13%, 13%);
@@ -72,37 +74,37 @@
 
 @layer utilities {
   .font-montserrat {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
   }
-  
+
   .bg-primary {
     background-color: var(--background-primary);
   }
-  
+
   .bg-secondary {
     background-color: var(--background-secondary);
   }
-  
+
   .bg-tertiary {
     background-color: var(--background-tertiary);
   }
-  
+
   .text-primary {
     color: var(--text-primary);
   }
-  
+
   .text-secondary {
     color: var(--text-secondary);
   }
-  
+
   .text-accent {
     color: var(--accent-primary);
   }
-  
+
   .bg-accent {
     background-color: var(--accent-primary);
   }
-  
+
   .border-accent {
     border-color: var(--accent-primary);
   }
@@ -125,7 +127,8 @@
 
 /* Navigation dots pulse animations */
 @keyframes pulse-blue {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
   }
   50% {
@@ -134,7 +137,8 @@
 }
 
 @keyframes pulse-orange {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7);
   }
   50% {
@@ -143,7 +147,8 @@
 }
 
 @keyframes pulse-cyan {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.7);
   }
   50% {
@@ -152,7 +157,8 @@
 }
 
 @keyframes pulse-purple {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.7);
   }
   50% {
@@ -161,7 +167,8 @@
 }
 
 @keyframes pulse-yellow {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.7);
   }
   50% {
@@ -191,10 +198,6 @@
 
 /* Custom styles - scroll indicator now handled inline */
 
-.slide-transition {
-  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
 /* Mobile-first responsive utilities for consistent layout */
 @media (max-width: 393px) {
   /* Samsung S25 and smaller phones */
@@ -202,27 +205,27 @@
     padding-left: 4vw;
     padding-right: 4vw;
   }
-  
+
   .mobile-text-base {
     font-size: clamp(0.75rem, 4vw, 1rem);
   }
-  
+
   .mobile-text-lg {
     font-size: clamp(1rem, 5vw, 1.25rem);
   }
-  
+
   .mobile-text-xl {
     font-size: clamp(1.25rem, 6vw, 1.5rem);
   }
-  
+
   .mobile-text-2xl {
     font-size: clamp(1.5rem, 7vw, 2rem);
   }
-  
+
   .mobile-text-3xl {
     font-size: clamp(2rem, 8vw, 2.5rem);
   }
-  
+
   .mobile-text-4xl {
     font-size: clamp(2.5rem, 9vw, 3rem);
   }
@@ -239,7 +242,7 @@
 /* Consistent full screen layout - all screen sizes */
 @media (max-height: 667px) {
   .short-screen-container {
-    padding-top: 60px !important; /* Consistent navbar clearance */  
+    padding-top: 60px !important; /* Consistent navbar clearance */
     padding-bottom: 20px !important;
     padding-left: 16px !important; /* Consistent left margin */
     padding-right: 16px !important; /* Consistent right margin */
@@ -251,40 +254,40 @@
     align-items: center !important;
     overflow: hidden !important;
   }
-  
+
   .short-screen-spacing {
     margin-bottom: 8px !important;
   }
-  
+
   .short-screen-title {
     font-size: clamp(1.2rem, 5vw, 2rem) !important;
     margin-bottom: 6px !important;
     line-height: 1.1 !important;
   }
-  
+
   .short-screen-text {
     font-size: clamp(0.75rem, 3vw, 0.875rem) !important;
     margin-bottom: 8px !important;
   }
-  
+
   .short-screen-grid {
     gap: 4px !important;
     max-height: calc(100vh - 180px) !important;
     width: 100% !important;
   }
-  
+
   .short-screen-services {
     gap: 6px !important;
   }
-  
+
   .short-screen-stats {
     margin-bottom: 6px !important;
   }
-  
+
   .short-screen-header {
     margin-bottom: 6px !important;
   }
-  
+
   /* Consistent center alignment */
   .short-screen-center {
     display: flex !important;
@@ -293,23 +296,23 @@
     justify-content: center !important;
     width: 100% !important;
   }
-  
+
   /* Center alignment for about title */
   .short-screen-about-title h2 {
     text-align: center !important;
   }
-  
+
   .short-screen-about-maps {
     margin-top: 8px !important;
     margin-bottom: 6px !important;
   }
-  
+
   .short-screen-about-map-container {
     height: 160px !important;
     width: 100% !important;
     max-width: 100% !important;
   }
-  
+
   .short-screen-about-address {
     font-size: clamp(0.55rem, 2vw, 0.65rem) !important;
     line-height: 1.1 !important;
@@ -318,11 +321,11 @@
     max-width: 100% !important;
     width: 100% !important;
   }
-  
+
   .short-screen-about-title {
     margin-bottom: 6px !important;
   }
-  
+
   .short-screen-about-content {
     gap: 8px !important;
   }
@@ -566,14 +569,25 @@
 }
 
 @keyframes whatsapp-flicker {
-  0%, 100% { opacity: 1; }
-  25% { opacity: 0.7; }
-  50% { opacity: 1; }
-  75% { opacity: 0.8; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.8;
+  }
 }
 
 .whatsapp-highlight {
-  animation: whatsapp-pulse 2s ease-in-out infinite, whatsapp-glow 3s ease-in-out infinite;
+  animation:
+    whatsapp-pulse 2s ease-in-out infinite,
+    whatsapp-glow 3s ease-in-out infinite;
   background: linear-gradient(135deg, #25d366, #128c7e, #25d366);
   background-size: 200% 200%;
   border: 2px solid rgba(34, 197, 94, 0.4);
@@ -586,13 +600,18 @@
 }
 
 .whatsapp-highlight::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
   transform: rotate(45deg);
   animation: shimmer 2.5s ease-in-out infinite;
 }
@@ -607,10 +626,6 @@
   100% {
     transform: translateX(200%) translateY(200%) rotate(45deg);
   }
-}
-
-.slide-transition {
-  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Minimal scroll indicator */
