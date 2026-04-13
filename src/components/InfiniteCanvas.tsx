@@ -1,6 +1,8 @@
-import React, { useState, useLayoutEffect } from "react";
+import React, { useState, useLayoutEffect, useRef, useCallback } from "react";
+import type Lenis from "lenis";
 import { Header } from "./Header";
 import Footer from "./Footer";
+import SmoothScroll from "./SmoothScroll";
 import { HeroChapter } from "./chapters/HeroChapter";
 import { ServicesChapter } from "./chapters/ServicesChapter";
 import { PortfolioChapter } from "./chapters/PortfolioChapter";
@@ -21,6 +23,11 @@ const chapters = [
 
 export function InfiniteCanvas() {
   const [scrollRoot, setScrollRoot] = useState<HTMLDivElement | null>(null);
+  const lenisRef = useRef<Lenis | null>(null);
+  const getLenis = useCallback(() => lenisRef.current, []);
+  const handleLenis = useCallback((instance: Lenis | null) => {
+    lenisRef.current = instance;
+  }, []);
 
   useLayoutEffect(() => {
     const sync = () => setSiteHeaderHeightVar();
@@ -38,14 +45,15 @@ export function InfiniteCanvas() {
   const { currentChapter, navigateToChapter } = useNavigation(
     chapters.length,
     scrollRoot,
+    getLenis,
   );
 
   return (
-    <div className="relative flex h-[100dvh] min-h-0 w-full flex-col overflow-hidden bg-primary text-primary">
+    <div className="relative flex h-[100dvh] min-h-0 w-full flex-col bg-primary text-primary">
       <Header onNavigate={navigateToChapter} currentChapter={currentChapter} />
-
-      <div
-        ref={setScrollRoot}
+      <SmoothScroll
+        scrollRootRef={setScrollRoot}
+        onLenis={handleLenis}
         className="site-scroll-root min-h-0 flex-1 overflow-y-auto overflow-x-hidden overscroll-y-contain bg-primary"
         style={{
           paddingTop: "var(--site-header-h, 88px)",
@@ -53,7 +61,11 @@ export function InfiniteCanvas() {
         }}
       >
         {chapters.map((Chapter, index) => (
-          <div key={index} id={`section-${index}`} className="w-full max-w-[100vw]">
+          <div
+            key={index}
+            id={`section-${index}`}
+            className="w-full max-w-[100vw]"
+          >
             {index === 0 ? (
               <Chapter onNavigateToPortfolio={() => navigateToChapter(2)} />
             ) : (
@@ -62,7 +74,7 @@ export function InfiniteCanvas() {
           </div>
         ))}
         <Footer />
-      </div>
+      </SmoothScroll>
     </div>
   );
 }

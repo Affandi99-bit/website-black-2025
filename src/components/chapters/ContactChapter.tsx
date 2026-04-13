@@ -1,16 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-// import { Button } from "../ui/button";
-import {
-  Instagram,
-  Youtube,
-  Linkedin,
-  Mail,
-  Clock,
-  Users,
-  Eye,
-} from "lucide-react";
+import { Instagram, Youtube, Linkedin } from "lucide-react";
 import { FaTiktok, FaWhatsapp } from "react-icons/fa";
 
 export function ContactChapter() {
@@ -67,12 +58,7 @@ export function ContactChapter() {
   }, []);
 
   return (
-    <motion.section
-      className="relative flex min-h-[100dvh] w-full items-center justify-center bg-gradient-to-b from-slate-800 via-purple-950/25 to-slate-900 py-10 sm:py-14 md:py-16"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
-    >
+    <section className="relative flex min-h-[100dvh] w-full items-center justify-center bg-gradient-to-b from-slate-800 via-purple-950/25 to-slate-900 py-10 sm:py-14 md:py-16">
       <div className=" mx-auto flex w-full max-w-4xl flex-col justify-center px-4 s25:px-6 md:px-8">
         {/* Header */}
         <div className="text-center mb-12 short-screen-header">
@@ -197,6 +183,6 @@ export function ContactChapter() {
           </motion.a>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }

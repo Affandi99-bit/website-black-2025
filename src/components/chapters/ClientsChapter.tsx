@@ -96,12 +96,7 @@ export function ClientsChapter() {
   const [statsInView, setStatsInView] = useState(false);
 
   return (
-    <motion.section
-      className="relative flex min-h-[100dvh] w-full items-center justify-center bg-gradient-to-b from-slate-700 via-purple-900/20 to-slate-700 py-10 sm:py-14 md:py-16"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
-    >
+    <section className="relative flex min-h-[100dvh] w-full items-center justify-center bg-gradient-to-b from-slate-700 via-purple-900/20 to-slate-700 py-10 sm:py-14 md:py-16">
       <div className="flex w-full max-w-7xl flex-col justify-center px-4 pb-8 s25:px-6 s25:pb-10 md:px-8">
         {/* Header - Area Kuning */}
         <div className="text-center mb-12 md:mb-16 short-screen-header">
@@ -176,6 +171,6 @@ export function ClientsChapter() {
           alt=""
         />
       </div>
-    </motion.section>
+    </section>
   );
 }

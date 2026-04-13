@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 
 export interface CardProps {
@@ -19,13 +19,32 @@ const Card = ({
   className = "",
 }: CardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const descWrapRef = useRef<HTMLDivElement>(null);
+  const descRef = useRef<HTMLParagraphElement>(null);
+
+  useLayoutEffect(() => {
+    const title = titleRef.current;
+    const wrap = descWrapRef.current;
+    const d = descRef.current;
+    if (!title) return;
+    gsap.set(title, { y: 0 });
+    if (wrap && d) {
+      gsap.set(wrap, { height: 0, overflow: "hidden" });
+      gsap.set(d, { autoAlpha: 0, y: 8 });
+    }
+  }, [desc]);
 
   const handleEnter = () => {
     const el = cardRef.current;
+    const title = titleRef.current;
+    const wrap = descWrapRef.current;
+    const d = descRef.current;
     if (!el) return;
     const overlay = el.querySelector(".overlay");
-    const text = el.querySelector(".text");
     if (!overlay) return;
+
+    gsap.killTweensOf([el, overlay, title, wrap, d].filter(Boolean));
 
     gsap.to(el, {
       filter: "grayscale(0%)",
@@ -38,21 +57,43 @@ const Card = ({
       duration: 0.4,
     });
 
-    if (text) {
-      gsap.fromTo(
-        text,
-        { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.5, ease: "linear" },
-      );
+    gsap.to(title, {
+      y: wrap && d ? -8 : 0,
+      duration: 0.45,
+      ease: "power2.out",
+    });
+
+    if (wrap && d) {
+      gsap.set(wrap, { height: "auto", overflow: "hidden" });
+      const targetH = wrap.offsetHeight;
+      gsap.set(wrap, { height: 0 });
+      gsap.to(wrap, {
+        height: targetH,
+        duration: 0.45,
+        ease: "power2.out",
+        onComplete: () => {
+          gsap.set(wrap, { height: "auto" });
+        },
+      });
+      gsap.to(d, {
+        autoAlpha: 1,
+        y: 0,
+        duration: 0.45,
+        ease: "power2.out",
+      });
     }
   };
 
   const handleLeave = () => {
     const el = cardRef.current;
+    const title = titleRef.current;
+    const wrap = descWrapRef.current;
+    const d = descRef.current;
     if (!el) return;
     const overlay = el.querySelector(".overlay");
-    const text = el.querySelector(".text");
     if (!overlay) return;
+
+    gsap.killTweensOf([el, overlay, title, wrap, d].filter(Boolean));
 
     gsap.to(el, {
       filter: "grayscale(100%)",
@@ -64,11 +105,25 @@ const Card = ({
       duration: 0.4,
     });
 
-    if (text) {
-      gsap.to(text, {
-        y: 40,
-        opacity: 0,
+    gsap.to(title, {
+      y: 0,
+      duration: 0.35,
+      ease: "power2.in",
+    });
+
+    if (wrap && d) {
+      const current = wrap.offsetHeight;
+      gsap.set(wrap, { height: current, overflow: "hidden" });
+      gsap.to(wrap, {
+        height: 0,
         duration: 0.3,
+        ease: "power2.in",
+      });
+      gsap.to(d, {
+        autoAlpha: 0,
+        y: 8,
+        duration: 0.25,
+        ease: "power2.in",
       });
     }
   };
@@ -88,7 +143,7 @@ const Card = ({
       }}
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
-      className={`relative h-[220px] xs:h-[240px] sm:h-[260px] md:h-[300px] overflow-hidden cursor-pointer ${className}`}
+      className={`relative h-[220px] xs:h-[240px] sm:h-[260px] md:h-[300px] cursor-pointer overflow-hidden ${className}`}
       style={{ filter: "grayscale(100%)" }}
     >
       <img
@@ -98,18 +153,27 @@ const Card = ({
         loading="lazy"
       />
 
-      <div className="overlay absolute inset-0 bg-black/30 transition-all pointer-events-none" />
+      <div className="overlay pointer-events-none absolute inset-0 bg-black/30 transition-all" />
 
-      <div className="absolute bottom-0 left-0 right-0 z-10 p-4 md:p-5">
-        <h3 className="line-clamp-2 text-sm font-semibold leading-snug text-white drop-shadow-sm md:text-base">
-          {title}
-        </h3>
-
-        {desc ? (
-          <p className="text mt-1.5 text-xs text-gray-200 opacity-0 md:text-sm">
-            {desc}
-          </p>
-        ) : null}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 max-h-[55%] overflow-hidden p-4 md:p-5">
+        <div className="pointer-events-none relative">
+          <h3
+            ref={titleRef}
+            className="card-title relative line-clamp-2 text-sm font-semibold leading-snug text-white drop-shadow-sm will-change-transform md:text-base"
+          >
+            {title}
+          </h3>
+          {desc ? (
+            <div ref={descWrapRef} className="overflow-hidden">
+              <p
+                ref={descRef}
+                className="card-desc mt-1 line-clamp-4 text-xs text-gray-200 md:text-sm"
+              >
+                {desc}
+              </p>
+            </div>
+          ) : null}
+        </div>
       </div>
     </div>
   );

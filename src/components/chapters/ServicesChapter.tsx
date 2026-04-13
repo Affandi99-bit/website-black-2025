@@ -47,12 +47,7 @@ const services = [
 
 export function ServicesChapter() {
   return (
-    <motion.section
-      className="relative flex min-h-[100dvh] w-full items-center justify-center bg-gradient-to-b from-slate-800 via-blue-950/30 to-slate-700 py-10 sm:py-14 md:py-16"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
-    >
+    <section className="relative flex min-h-[100dvh] w-full items-center justify-center bg-gradient-to-b from-slate-800 via-blue-950/30 to-slate-700 py-10 sm:py-14 md:py-16">
       <div className=" w-full max-w-7xl px-4 s25:px-6 md:px-8">
         <div className="text-center mb-12 short-screen-header">
           <motion.h2
@@ -64,11 +59,11 @@ export function ServicesChapter() {
             viewport={{ once: false }}
           >
             <span className="block text-white">
-              OUR CREATIVE ARSENAL
-              <span className="block">IS DIFFERENT</span>
+              A FULL-SERVICE CREATIVE STUDIO
+              <span className="block">DELIVERING IMPACTFUL VISUALS</span>
             </span>
             <span className="block animate-gradient-blue-purple font-bold">
-              THAN ANYTHING ELSE
+              FROM CONCEPT TO FINAL PRODUCTION
             </span>
           </motion.h2>
 
@@ -114,6 +109,6 @@ export function ServicesChapter() {
           ))}
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }

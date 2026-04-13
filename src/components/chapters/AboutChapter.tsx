@@ -4,13 +4,7 @@ import { MapPin } from "lucide-react";
 
 export function AboutChapter() {
   return (
-    <motion.section
-      className="relative flex min-h-[100dvh] w-full items-center justify-center bg-gradient-to-b from-slate-700 via-orange-950/25 to-slate-800 py-10 sm:py-14 md:py-16"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.8 }}
-    >
+    <section className="relative flex min-h-[100dvh] w-full items-center justify-center bg-gradient-to-b from-slate-700 via-orange-950/25 to-slate-800 py-10 sm:py-14 md:py-16">
       <div className="max-w-7xl px-4 s25:px-6 md:px-8 w-full h-full flex flex-col justify-center items-center pt-12 s25:pt-16 pb-6 s25:pb-8 md:py-12">
         <div className="w-full max-w-4xl flex flex-col items-center">
           {/* Title Area - Centered */}
@@ -251,6 +245,6 @@ export function AboutChapter() {
           </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }

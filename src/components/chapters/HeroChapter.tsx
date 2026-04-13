@@ -7,13 +7,7 @@ interface HeroChapterProps {
 
 export function HeroChapter({ onNavigateToPortfolio }: HeroChapterProps) {
   return (
-    <motion.section
-      className="relative flex h-screen w-full items-center justify-center bg-gradient-to-b from-slate-900 via-blue-950/30 to-slate-800"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.8 }}
-    >
+    <section className="relative flex h-screen w-full items-center justify-center bg-gradient-to-b from-slate-900 via-blue-950/30 to-slate-800">
       <div className="mobile-container max-w-4xl px-4 text-center s25:px-6 md:px-8">
         {/* Hero Text */}
         <motion.div
@@ -41,9 +35,10 @@ export function HeroChapter({ onNavigateToPortfolio }: HeroChapterProps) {
             transition={{ duration: 0.4 }}
             viewport={{ once: false }}
           >
-            A creative hub based in Batu City, East Java. specializing in video
-            production, motion graphics, photography, and design. We transform
-            imaginative ideas into stunning reality
+            We handle everything from concept to execution — crafting
+            high-quality video production, motion graphics, photography, and
+            digital content that elevate your brand and connect with your
+            audience.
           </motion.p>
 
           <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
@@ -79,6 +74,6 @@ export function HeroChapter({ onNavigateToPortfolio }: HeroChapterProps) {
           </div>
         </motion.div>
       </div>
-    </motion.section>
+    </section>
   );
 }

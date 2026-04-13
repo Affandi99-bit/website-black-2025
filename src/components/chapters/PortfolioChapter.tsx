@@ -60,12 +60,9 @@ export function PortfolioChapter() {
   const [selectedTitle, setSelectedTitle] = useState<string>("");
 
   return (
-    <motion.section
+    <section
       className="relative flex w-full flex-col items-center justify-center bg-gradient-to-b from-slate-700 via-cyan-950/25 to-slate-700 py-8 sm:py-12 md:py-16"
       data-section="portfolio"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
     >
       <div className=" flex min-h-0 w-full max-w-7xl flex-1 flex-col px-4 s25:px-6 md:px-8">
         <div className="text-center mb-6 short-screen-header">
@@ -80,7 +77,6 @@ export function PortfolioChapter() {
             <span className="block text-white">OUR CREATIVE </span>
             <span className="animate-gradient-cyan-green font-bold">MAGIC</span>
           </motion.h2>
-
           <motion.p
             className="mobile-text-base s25:text-base text-gray-300 max-w-2xl mx-auto mb-6 s25:mb-8 font-light short-screen-text short-screen-spacing"
             initial={{ opacity: 0 }}
@@ -97,7 +93,7 @@ export function PortfolioChapter() {
           {portfolioItems.map((item) => (
             <motion.div
               key={item.title}
-              className="overflow-hidden rounded-xl border border-slate-700/50 bg-slate-800/30 transition-colors duration-300 hover:border-slate-600"
+              className="overflow-hidden rounded-md border border-slate-700/50 bg-slate-800/30 transition-colors duration-300 hover:border-slate-600"
               initial={{ opacity: 0, y: 8 }}
               whileInView={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
@@ -121,7 +117,7 @@ export function PortfolioChapter() {
 
       {/* Video Modal Pop-up - Positioned within portfolio section area */}
       {selectedVideo && (
-        <div className="absolute inset-0 z-50 flex items-center justify-center">
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
           <motion.div
             className="absolute inset-0 bg-black/80"
             initial={{ opacity: 0 }}
@@ -162,6 +158,6 @@ export function PortfolioChapter() {
           </motion.div>
         </div>
       )}
-    </motion.section>
+    </section>
   );
 }

@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from "react";
+import type Lenis from "lenis";
 import { scrollContainerToElement } from "../lib/gsap-scroll";
 
 function getActiveSectionIndex(
@@ -27,18 +28,38 @@ function getActiveSectionIndex(
 export function useNavigation(
   totalChapters: number,
   scrollRoot: HTMLElement | null,
+  getLenis?: () => Lenis | null,
 ) {
   const [currentChapter, setCurrentChapter] = useState(0);
   const scrollRootRef = useRef(scrollRoot);
   scrollRootRef.current = scrollRoot;
+  const getLenisRef = useRef(getLenis);
+  getLenisRef.current = getLenis;
 
   const navigateToChapter = useCallback(
     (chapterIndex: number) => {
       if (chapterIndex < 0 || chapterIndex >= totalChapters) return;
-      const root = scrollRootRef.current;
-      const el = document.getElementById(`section-${chapterIndex}`);
-      if (!root || !el) return;
-      scrollContainerToElement(root, el);
+
+      const run = () => {
+        const root = scrollRootRef.current;
+        const el = document.getElementById(`section-${chapterIndex}`);
+        if (!root || !el) return;
+        scrollContainerToElement(root, el, {
+          lenis: getLenisRef.current?.() ?? null,
+        });
+      };
+
+      if (getLenisRef.current?.()) {
+        run();
+        return;
+      }
+      requestAnimationFrame(() => {
+        if (getLenisRef.current?.()) {
+          run();
+          return;
+        }
+        requestAnimationFrame(run);
+      });
     },
     [totalChapters],
   );
