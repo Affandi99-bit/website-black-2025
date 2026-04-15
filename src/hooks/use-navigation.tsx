@@ -68,7 +68,10 @@ export function useNavigation(
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key !== "ArrowUp" && e.key !== "ArrowDown") return;
       e.preventDefault();
-      const active = getActiveSectionIndex(scrollRootRef.current, totalChapters);
+      const active = getActiveSectionIndex(
+        scrollRootRef.current,
+        totalChapters,
+      );
       if (e.key === "ArrowUp") {
         navigateToChapter(active - 1);
       } else {

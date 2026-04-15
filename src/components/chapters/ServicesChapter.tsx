@@ -1,49 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Camera, Video, Palette, Zap } from "lucide-react";
-
-const services = [
-  {
-    name: "Photography",
-    icon: Camera,
-    description:
-      "Portraits, events, and product shots with sharp visual storytelling.",
-    iconGradient: "bg-gradient-to-br from-pink-400 to-pink-600",
-    hoverGradient:
-      "hover:bg-gradient-to-br hover:from-pink-900/30 hover:to-pink-800/20",
-    cardColor: "bg-slate-800/50",
-  },
-  {
-    name: "Videography",
-    icon: Video,
-    description:
-      "From script to final edit—event coverage, promos, and social content.",
-    iconGradient: "bg-gradient-to-br from-blue-500 to-purple-600",
-    hoverGradient:
-      "hover:bg-gradient-to-br hover:from-blue-900/30 hover:to-purple-800/20",
-    cardColor: "bg-slate-800/50",
-  },
-  {
-    name: "Graphic Design",
-    icon: Palette,
-    description:
-      "Branding, posters, and social media assets that speak your message clearly.",
-    iconGradient: "bg-gradient-to-br from-cyan-400 to-cyan-600",
-    hoverGradient:
-      "hover:bg-gradient-to-br hover:from-cyan-900/30 hover:to-cyan-800/20",
-    cardColor: "bg-slate-800/50",
-  },
-  {
-    name: "Motion Graphics",
-    icon: Zap,
-    description:
-      "Animated titles, explainer videos, and dynamic visuals that grab attention.",
-    iconGradient: "bg-gradient-to-br from-orange-400 to-red-500",
-    hoverGradient:
-      "hover:bg-gradient-to-br hover:from-orange-900/30 hover:to-red-900/20",
-    cardColor: "bg-slate-800/50",
-  },
-];
+import { services } from "@/constant";
+import Services from "../Services";
 
 export function ServicesChapter() {
   return (
@@ -82,30 +40,7 @@ export function ServicesChapter() {
         {/* Services Grid */}
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 short-screen-services">
           {services.map((service, index) => (
-            <motion.div
-              key={service.name}
-              className={`${service.cardColor} ${service.hoverGradient} border border-slate-700/50 rounded-lg md:rounded-xl p-3 md:p-6 text-center group cursor-pointer hover:border-slate-600 transition-all duration-300 aspect-square flex flex-col justify-center`}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.4 }}
-              viewport={{ once: false }}
-              whileHover={{ y: -5, scale: 1.02 }}
-            >
-              <div className="mb-2 md:mb-6 flex justify-center">
-                <div
-                  className={`w-10 h-10 md:w-16 md:h-16 ${service.iconGradient} rounded-lg md:rounded-xl flex items-center justify-center`}
-                >
-                  <service.icon className="w-5 h-5 md:w-8 md:h-8 text-white" />
-                </div>
-              </div>
-              <h3 className="text-sm md:text-xl font-bold mb-1 md:mb-3 text-white leading-tight">
-                {service.name}
-              </h3>
-              <p className="text-xs md:text-sm text-gray-300 leading-relaxed">
-                {service.description}
-              </p>
-            </motion.div>
+            <Services service={service} />
           ))}
         </div>
       </div>
