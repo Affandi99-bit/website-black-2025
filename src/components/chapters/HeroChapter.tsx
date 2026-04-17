@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import heroBgVideo from "../../assets/bg.mp4";
 
 interface HeroChapterProps {
   onNavigateToPortfolio?: () => void;
@@ -7,8 +8,20 @@ interface HeroChapterProps {
 
 export function HeroChapter({ onNavigateToPortfolio }: HeroChapterProps) {
   return (
-    <section className="relative flex h-screen w-full items-center justify-center bg-gradient-to-b from-slate-900 via-blue-950/30 to-slate-800">
-      <div className="mobile-container max-w-4xl px-4 text-center s25:px-6 md:px-8">
+    <section className="relative flex h-screen w-full items-center justify-center overflow-hidden bg-gradient-to-b from-slate-900 via-blue-950/30 to-slate-800">
+      <video
+        className="absolute inset-0 h-full w-full object-cover"
+        src={heroBgVideo}
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="metadata"
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-slate-950/60" aria-hidden="true" />
+
+      <div className="mobile-container relative z-10 max-w-4xl px-4 text-center s25:px-6 md:px-8">
         {/* Hero Text */}
         <motion.div
           initial={{ opacity: 0 }}
