@@ -19,7 +19,7 @@ export function HeroChapter({ onNavigateToPortfolio }: HeroChapterProps) {
         preload="metadata"
         aria-hidden="true"
       />
-      <div className="absolute inset-0 bg-slate-950/60" aria-hidden="true" />
+      <div className="absolute inset-0 bg-slate-950/80" aria-hidden="true" />
 
       <div className="mobile-container relative z-10 max-w-4xl px-4 text-center s25:px-6 md:px-8">
         {/* Hero Text */}
@@ -35,11 +35,8 @@ export function HeroChapter({ onNavigateToPortfolio }: HeroChapterProps) {
               Craft Your Story
               <span className="block">with Visual Impact</span>
             </span>
-            <span className="block animate-gradient-blue-purple font-bold uppercase">
-              BlackStudio.ID
-            </span>
           </h1>
-
+          <img src="/black.webp" className="max-w-3xl object-contain" alt="" />
           <motion.p
             className="mobile-text-base text-center w-full px-5 s25:text-lg text-gray-300 max-w-2xl mx-auto mb-8 s25:mb-12 leading-relaxed font-light short-screen-text short-screen-spacing"
             initial={{ opacity: 0 }}

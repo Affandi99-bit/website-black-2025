@@ -143,7 +143,7 @@ const Card = ({
       }}
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
-      className={`relative h-[220px] xs:h-[240px] sm:h-[260px] md:h-[300px] cursor-pointer overflow-hidden ${className}`}
+      className={`relative aspect-[16/9] w-full cursor-pointer overflow-hidden ${className}`}
       style={{ filter: "grayscale(100%)" }}
     >
       <img
@@ -155,7 +155,7 @@ const Card = ({
 
       <div className="overlay pointer-events-none absolute inset-0 bg-black/30 transition-all" />
 
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 max-h-[55%] overflow-hidden p-4 md:p-5">
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 max-h-[50%] overflow-hidden p-4 md:p-5">
         <div className="pointer-events-none relative">
           <h3
             ref={titleRef}

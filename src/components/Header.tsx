@@ -69,7 +69,7 @@ export function Header({ onNavigate, currentChapter }: HeaderProps) {
           aria-label="Home"
         >
           <img
-            className="h-9 w-auto max-w-[9.5rem] object-contain sm:h-10 sm:max-w-[11rem] md:h-11 md:max-w-[13rem] lg:max-w-[14rem]"
+            className="h-7 w-auto max-w-[9.5rem] object-contain sm:h-10 sm:max-w-[11rem] md:h-7 md:max-w-[13rem] lg:max-w-[14rem]"
             src="/black.webp"
             alt="BlackStudio"
           />
@@ -89,9 +89,7 @@ export function Header({ onNavigate, currentChapter }: HeaderProps) {
                 onClick={() => handleNavClick(item.index)}
                 aria-current={isActive ? "page" : undefined}
                 className={`shrink-0 rounded-full px-2.5 py-1 text-[0.6875rem] font-medium leading-none transition-colors duration-300 sm:px-3 sm:text-xs ${
-                  isActive
-                    ? activeClasses
-                    : "text-white/75 hover:text-white"
+                  isActive ? activeClasses : "text-white/75 hover:text-white"
                 }`}
               >
                 {item.name}
@@ -114,9 +112,7 @@ export function Header({ onNavigate, currentChapter }: HeaderProps) {
                 onClick={() => handleNavClick(item.index)}
                 aria-current={isActive ? "page" : undefined}
                 className={`text-sm font-medium transition-colors duration-300 lg:text-[0.9375rem] ${
-                  isActive
-                    ? activeClasses
-                    : "text-white/80 hover:text-white"
+                  isActive ? activeClasses : "text-white/80 hover:text-white"
                 }`}
               >
                 {item.name}

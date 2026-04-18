@@ -57,6 +57,13 @@ const portfolioItems = [
     desc: "A visually rich documentary portraying social and environmental narratives, delivering a meaningful story through strong visuals and immersive pacing.",
     videoId: "PnHfKOg3fI0",
   },
+  {
+    id: 8,
+    title: "Company Profile NAYUE 2025",
+    category: "Video Production",
+    desc: "Take a look behind the curtain of our latest professional production for NAYUE 2025. This behind-the-scenes feature showcases the dedication, technical expertise, and collaborative effort required to craft a high-quality company profile and safety induction video.",
+    videoId: "1_J8ZtqMX80",
+  },
 ];
 const services = [
   {

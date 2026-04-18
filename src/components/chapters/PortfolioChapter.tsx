@@ -37,7 +37,7 @@ export function PortfolioChapter() {
           </motion.p>
         </div>
 
-        <div className="short-screen-grid grid min-h-0 max-h-[min(58dvh,34rem)] flex-1 grid-cols-1 grid-rows-[auto] gap-3 overflow-y-auto overscroll-y-contain pr-0.5 xs:grid-cols-2 md:max-h-none md:grid-cols-3 md:gap-4 md:overflow-visible lg:grid-cols-4">
+        <div className=" grid min-h-0 max-h-[min(58dvh,34rem)] flex-1 grid-cols-1 grid-rows-[auto] gap-3 overflow-y-auto overscroll-y-contain pr-0.5 xs:grid-cols-2 md:max-h-none md:grid-cols-3 md:gap-4 md:overflow-visible">
           {portfolioItems.map((item) => (
             <motion.div
               key={item.title}

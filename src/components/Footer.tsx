@@ -3,7 +3,11 @@ import React from "react";
 export default function Footer() {
   return (
     <footer className=" bg-gradient-to-b from-slate-900 via-blue-950/30 to-slate-800 px-4 py-10 text-white sm:px-6 sm:py-12 md:px-10 lg:px-14">
-      <div className="mx-auto grid max-w-7xl gap-10 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-10 lg:grid-cols-3">
+      <div className="mx-auto grid max-w-7xl gap-10 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-10 lg:grid-cols-4">
+        <div className="min-w-0 sm:col-span-2 lg:col-span-1 flex flex-col justify-start items-start gap-2">
+          <img src="/black.webp" alt="" className="w-auto max-h-7" />
+          <img src="/motion.webp" alt="" className="w-auto max-h-7" />
+        </div>
         <div className="min-w-0 sm:col-span-2 lg:col-span-1">
           <h2 className="mb-3 text-xl font-bold tracking-tight sm:text-2xl">
             CV. KREASI RUMAH HITAM
@@ -21,6 +25,13 @@ export default function Footer() {
           </h3>
           <p className="mb-3 text-sm leading-relaxed text-white/80">
             <span className="font-medium text-white/95">Email</span>
+            <br />
+            <a
+              className="break-all underline-offset-2 hover:underline"
+              href="mailto:blackstudio.id@gmail.com"
+            >
+              blackstudio.id@gmail.com
+            </a>
             <br />
             <a
               className="break-all underline-offset-2 hover:underline"

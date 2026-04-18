@@ -40,11 +40,11 @@ const Services = ({ service }: ServicesProps) => {
       <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/25 to-black/55" />
 
       <div className="relative mb-2 flex justify-center md:mb-6">
-        <div
+        {/* <div
           className={`w-10 h-10 md:w-16 md:h-16 ${service.iconGradient} rounded-lg md:rounded-xl flex items-center justify-center`}
         >
           <service.icon className="w-5 h-5 md:w-8 md:h-8 text-white" />
-        </div>
+        </div> */}
       </div>
       <h3 className="relative mb-1 text-sm font-bold leading-tight text-white md:mb-3 md:text-xl">
         {service.name}
