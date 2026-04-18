@@ -7,9 +7,9 @@ export function ServicesChapter() {
   return (
     <section className="relative flex min-h-[100dvh] w-full items-center justify-center bg-gradient-to-b from-slate-800 via-blue-950/30 to-slate-700 py-10 sm:py-14 md:py-16">
       <div className=" w-full max-w-7xl px-4 s25:px-6 md:px-8">
-        <div className="text-center mb-12 short-screen-header">
+        <div className="mb-12 text-center">
           <motion.h2
-            className="mobile-text-xl s25:text-2xl md:text-4xl lg:text-6xl font-bold mb-3 s25:mb-4 md:mb-6 leading-tight px-2 short-screen-title"
+            className="mobile-text-xl mb-3 px-2 font-bold leading-tight s25:mb-4 s25:text-2xl md:mb-6 md:text-4xl lg:text-6xl"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -26,7 +26,7 @@ export function ServicesChapter() {
           </motion.h2>
 
           <motion.p
-            className="text-sm md:text-lg text-gray-300 max-w-2xl mx-auto mb-8 md:mb-12 font-light px-4 short-screen-text short-screen-spacing"
+            className="mx-auto mb-8 max-w-2xl px-4 text-sm font-light text-gray-300 md:mb-12 md:text-lg"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -38,9 +38,9 @@ export function ServicesChapter() {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 short-screen-services">
+        <div className="grid grid-cols-1 gap-3 s25:grid-cols-2 md:gap-6 lg:grid-cols-4">
           {services.map((service, index) => (
-            <Services service={service} />
+            <Services key={index} service={service} />
           ))}
         </div>
       </div>

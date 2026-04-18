@@ -99,9 +99,9 @@ export function ClientsChapter() {
     <section className="relative flex min-h-[100dvh] w-full items-center justify-center bg-gradient-to-b from-slate-700 via-purple-900/20 to-slate-700 py-10 sm:py-14 md:py-16">
       <div className="flex w-full max-w-7xl flex-col justify-center px-4 pb-8 s25:px-6 s25:pb-10 md:px-8">
         {/* Header - Area Kuning */}
-        <div className="text-center mb-12 md:mb-16 short-screen-header">
+        <div className="mb-12 text-center md:mb-16">
           <motion.h2
-            className="mobile-text-2xl s25:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 s25:mb-4 leading-tight short-screen-title"
+            className="mobile-text-2xl mb-3 font-bold leading-tight s25:mb-4 s25:text-3xl md:text-4xl lg:text-5xl"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -114,7 +114,7 @@ export function ClientsChapter() {
             </span>
           </motion.h2>
           <motion.p
-            className="mobile-text-base s25:text-base text-gray-300 max-w-2xl mx-auto font-light short-screen-text short-screen-spacing"
+            className="mobile-text-base mx-auto max-w-2xl font-light text-gray-300 s25:text-base"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -127,7 +127,7 @@ export function ClientsChapter() {
 
         {/* Stats - Area Merah */}
         <motion.div
-          className="grid grid-cols-4 gap-4 md:gap-8 mb-10 md:mb-16 max-w-4xl mx-auto short-screen-stats"
+          className="mx-auto mb-10 grid max-w-4xl grid-cols-2 gap-4 sm:grid-cols-4 md:mb-16 md:gap-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           onViewportEnter={() => setStatsInView(true)}

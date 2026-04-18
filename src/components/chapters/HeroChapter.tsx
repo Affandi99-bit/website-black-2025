@@ -30,15 +30,19 @@ export function HeroChapter({ onNavigateToPortfolio }: HeroChapterProps) {
           transition={{ duration: 0.4 }}
           viewport={{ once: false }}
         >
-          <h1 className="mobile-text-2xl s25:text-3xl md:text-5xl lg:text-6xl font-bold mb-6 s25:mb-8 leading-tight short-screen-title">
+          <h1 className="mobile-text-2xl mb-6 font-bold leading-tight s25:mb-8 s25:text-3xl md:text-5xl lg:text-6xl">
             <span className="block text-white uppercase">
               Craft Your Story
               <span className="block">with Visual Impact</span>
             </span>
           </h1>
-          <img src="/black.webp" className="max-w-3xl object-contain" alt="" />
+          <img
+            src="/black.webp"
+            className="mx-auto w-full max-w-[17rem] object-contain s25:max-w-md md:max-w-3xl"
+            alt=""
+          />
           <motion.p
-            className="mobile-text-base text-center w-full px-5 s25:text-lg text-gray-300 max-w-2xl mx-auto mb-8 s25:mb-12 leading-relaxed font-light short-screen-text short-screen-spacing"
+            className="mobile-text-base mx-auto mb-8 w-full max-w-2xl px-5 text-center font-light leading-relaxed text-gray-300 s25:mb-12 s25:text-lg"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             exit={{ opacity: 0 }}

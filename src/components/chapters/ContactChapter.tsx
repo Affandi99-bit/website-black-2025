@@ -61,9 +61,9 @@ export function ContactChapter() {
     <section className="relative flex min-h-[100dvh] w-full items-center justify-center bg-gradient-to-b from-slate-800 via-purple-950/25 to-slate-900 py-10 sm:py-14 md:py-16">
       <div className=" mx-auto flex w-full max-w-4xl flex-col justify-center px-4 s25:px-6 md:px-8">
         {/* Header */}
-        <div className="text-center mb-12 short-screen-header">
+        <div className="mb-12 text-center">
           <motion.h2
-            className="mobile-text-3xl s25:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 s25:mb-6 leading-tight short-screen-title"
+            className="mobile-text-3xl mb-4 font-bold leading-tight s25:mb-6 s25:text-4xl md:text-5xl lg:text-6xl"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -77,7 +77,7 @@ export function ContactChapter() {
           </motion.h2>
 
           <motion.p
-            className="mobile-text-base s25:text-base text-gray-300 max-w-2xl mx-auto mb-6 s25:mb-8 font-light short-screen-text short-screen-spacing"
+            className="mobile-text-base mx-auto mb-6 max-w-2xl font-light text-gray-300 s25:mb-8 s25:text-base"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -90,7 +90,7 @@ export function ContactChapter() {
         </div>
 
         {/* Contact Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+        <div className="mb-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -98,7 +98,7 @@ export function ContactChapter() {
             transition={{ duration: 0.4 }}
             viewport={{ once: false }}
           >
-            <button className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-600 text-white px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 w-64">
+            <button className="flex w-full max-w-xs items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-medium text-white backdrop-blur-sm transition-all duration-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-600 sm:w-64">
               blackstudio.id@gmail.com
             </button>
           </motion.div>
@@ -112,7 +112,7 @@ export function ContactChapter() {
           >
             <button
               onClick={handleWhatsApp}
-              className="whatsapp-highlight flex items-center gap-2 text-white px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 w-64 relative z-10"
+              className="whatsapp-highlight relative z-10 flex w-full max-w-xs items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-white transition-all duration-300 sm:w-64"
             >
               <FaWhatsapp className="w-4 h-4 mr-2" />
               +62-811-357-7793

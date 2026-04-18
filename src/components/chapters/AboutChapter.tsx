@@ -9,14 +9,14 @@ export function AboutChapter() {
         <div className="w-full max-w-4xl flex flex-col items-center">
           {/* Title Area - Centered */}
           <motion.div
-            className="mb-4 md:mb-6 w-full short-screen-header short-screen-about-title"
+            className="mb-4 w-full md:mb-6"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
             viewport={{ once: false }}
           >
-            <h2 className="mobile-text-3xl s25:text-4xl md:text-4xl lg:text-5xl font-bold leading-tight text-center short-screen-title">
+            <h2 className="mobile-text-3xl text-center font-bold leading-tight s25:text-4xl md:text-4xl lg:text-5xl">
               <span className="block text-white md:hidden">BRINGING</span>
               <span className="block text-white md:hidden">
                 YOUR{" "}
@@ -36,7 +36,7 @@ export function AboutChapter() {
           </motion.div>
 
           {/* Content Area - All centered */}
-          <div className="w-full flex flex-col items-center space-y-3 md:space-y-6 short-screen-about-maps short-screen-about-content">
+          <div className="flex w-full flex-col items-center space-y-3 md:space-y-6">
             {/* Maps Preview - Centered */}
             <motion.div
               className="flex flex-col aspect-video items-center w-full max-w-full md:max-w-lg"
@@ -46,10 +46,10 @@ export function AboutChapter() {
               transition={{ duration: 0.4 }}
               viewport={{ once: false }}
             >
-              <div className="w-full rounded-lg md:rounded-2xl overflow-hidden shadow-lg md:shadow-2xl short-screen-about-map-container">
+              <div className="w-full overflow-hidden rounded-lg shadow-lg md:rounded-2xl md:shadow-2xl">
                 {/* Custom Map Design */}
                 <div
-                  className="relative w-full h-[200px] md:h-80 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 cursor-pointer transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/20 short-screen-about-map-container"
+                  className="relative h-[200px] w-full cursor-pointer bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/20 md:h-80"
                   onClick={() =>
                     window.open(
                       "https://maps.app.goo.gl/EKNTP1cuFMwv6zEV7",
@@ -152,7 +152,7 @@ export function AboutChapter() {
                           initial={{ opacity: 0, scale: 0.8 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           transition={{ duration: 0.5, delay: 0.3 }}
-                          className="mt-1 bg-gradient-to-r from-slate-800 to-slate-700 border border-orange-500/30 rounded-lg px-3 py-2 md:px-4 md:py-3 shadow-xl backdrop-blur-sm w-full max-w-full md:max-w-md mx-auto short-screen-about-address"
+                          className="mx-auto mt-1 w-full max-w-full rounded-lg border border-orange-500/30 bg-gradient-to-r from-slate-800 to-slate-700 px-3 py-2 shadow-xl backdrop-blur-sm md:max-w-md md:px-4 md:py-3"
                         >
                           <div className="text-center">
                             {/* Mobile: 4 lines layout */}
@@ -163,7 +163,7 @@ export function AboutChapter() {
                               <p className="text-gray-300 text-[8px] leading-tight mt-1">
                                 CV. Kreasi Rumah Hitam
                               </p>
-                              <p className="text-gray-400 text-[7px] leading-tight mt-1 whitespace-nowrap">
+                              <p className="mt-1 text-[7px] leading-tight text-gray-400">
                                 Jl. Suropati Gg. 9 No.20, RT.1/RW.8,
                                 Pesanggrahan
                               </p>
@@ -180,7 +180,7 @@ export function AboutChapter() {
                               <p className="text-gray-300 text-sm leading-tight mt-1">
                                 CV. Kreasi Rumah Hitam
                               </p>
-                              <p className="text-gray-400 text-xs leading-tight mt-1 whitespace-nowrap">
+                              <p className="mt-1 text-xs leading-tight text-gray-400">
                                 Jl. Suropati Gg. 9 No.20, RT.1/RW.8,
                                 Pesanggrahan
                               </p>

@@ -9,13 +9,13 @@ export function PortfolioChapter() {
 
   return (
     <section
-      className="relative flex w-full flex-col items-center justify-center bg-gradient-to-b from-slate-700 via-cyan-950/25 to-slate-700 py-8 sm:py-12 md:py-16"
+      className="relative flex w-full flex-col items-center justify-center bg-gradient-to-b from-slate-700 via-cyan-950/25 to-slate-700 py-6 s25:py-8 sm:py-12 md:py-16"
       data-section="portfolio"
     >
-      <div className=" flex min-h-0 w-full max-w-7xl flex-1 flex-col px-4 s25:px-6 md:px-8">
-        <div className="text-center mb-6 short-screen-header">
+      <div className="flex min-h-0 w-full max-w-7xl flex-1 flex-col px-3 s25:px-5 md:px-8">
+        <div className="mb-6 text-center">
           <motion.h2
-            className="mobile-text-3xl s25:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 s25:mb-4 leading-tight short-screen-title"
+            className="mobile-text-3xl mb-3 font-bold leading-tight s25:mb-4 s25:text-4xl md:text-5xl lg:text-6xl"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -26,7 +26,7 @@ export function PortfolioChapter() {
             <span className="animate-gradient-cyan-green font-bold">MAGIC</span>
           </motion.h2>
           <motion.p
-            className="mobile-text-base s25:text-base text-gray-300 max-w-2xl mx-auto mb-6 s25:mb-8 font-light short-screen-text short-screen-spacing"
+            className="mobile-text-base mx-auto mb-5 max-w-2xl px-2 font-light text-gray-300 s25:mb-8 s25:text-base"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -37,7 +37,7 @@ export function PortfolioChapter() {
           </motion.p>
         </div>
 
-        <div className=" grid min-h-0 max-h-[min(58dvh,34rem)] flex-1 grid-cols-1 grid-rows-[auto] gap-3 overflow-y-auto overscroll-y-contain pr-0.5 xs:grid-cols-2 md:max-h-none md:grid-cols-3 md:gap-4 md:overflow-visible">
+        <div className="grid min-h-0 grid-cols-1 grid-rows-[auto] gap-2.5 s25:grid-cols-2 md:grid-cols-3 md:gap-4">
           {portfolioItems.map((item) => (
             <motion.div
               key={item.title}

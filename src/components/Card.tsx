@@ -155,11 +155,11 @@ const Card = ({
 
       <div className="overlay pointer-events-none absolute inset-0 bg-black/30 transition-all" />
 
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 max-h-[50%] overflow-hidden p-4 md:p-5">
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 max-h-[62%] overflow-hidden p-2.5 s25:p-3 md:max-h-[50%] md:p-5">
         <div className="pointer-events-none relative">
           <h3
             ref={titleRef}
-            className="card-title relative line-clamp-2 text-sm font-semibold leading-snug text-white drop-shadow-sm will-change-transform md:text-base"
+            className="card-title relative line-clamp-2 text-xs font-semibold leading-snug text-white drop-shadow-sm will-change-transform s25:text-sm md:text-base"
           >
             {title}
           </h3>
@@ -167,7 +167,7 @@ const Card = ({
             <div ref={descWrapRef} className="overflow-hidden">
               <p
                 ref={descRef}
-                className="card-desc mt-1 line-clamp-4 text-xs text-gray-200 md:text-sm"
+                className="card-desc mt-1 line-clamp-3 text-[0.65rem] leading-snug text-gray-200 s25:text-xs md:line-clamp-4 md:text-sm"
               >
                 {desc}
               </p>
